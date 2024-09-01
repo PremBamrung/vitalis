@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  vitalis:
+    build: .
+    volumes:
+      - ./db:/app/db            # Mount the db directory to persist the SQLite database
+      - ./data:/app/data        # Mount the data directory if needed
+    ports:
+      - "8501:8501"              # Expose port for Streamlit
+
